@@ -1307,9 +1307,9 @@ void MainWindow::addTorrents(QStringList const& filenames)
         {
             show_options = b->isChecked();
         }
-        QString dirname = file_dialog->directory().absolutePath();
-        prefs_.set(Prefs::OPEN_DIALOG_FOLDER, dirname);
+        prefs_.set(Prefs::OPEN_DIALOG_FOLDER, file_dialog->directory().absolutePath());
     }
+
     for (QString const& filename : filenames)
     {
         addTorrent(AddData{ filename }, show_options);
